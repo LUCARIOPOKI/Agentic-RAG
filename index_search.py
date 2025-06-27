@@ -74,44 +74,6 @@ def qstn_vectorize(question: str, index: str) -> List[str]:
         logger.exception("Error during vector search for question '%s' on index '%s': %s", question, index, str(e))
         return []
 
-# from azure.search.documents import SearchClient
-# from azure.search.documents.models import VectorizedQuery
-# import os
-# from azure.core.credentials import AzureKeyCredential
-# from chunks import vectorize #,chunks
-
-# endpoint = os.getenv("AZURE_SEARCH_ENDPOINT")
-# api_key = os.getenv("AZURE_SEARCH_API_KEY")
-# # index_name = os.getenv("INDEX") 
-
-# def qstn_vectorize(question,index):
-#     index_names = index
-#     # print(type(index_names))
-#     search_client = SearchClient(
-#         endpoint=endpoint,
-#         index_name=index_names,
-#         credential=AzureKeyCredential(api_key)
-#         )
-    
-#     question_vectors = vectorize(question) 
-
-#     vector_qstn = VectorizedQuery(
-#         vector=question_vectors,
-#         fields = "embeddings"
-#     )
-
-#     results = search_client.search(
-#         search_text= question,
-#         vector_queries=[vector_qstn],
-#         top = 5
-#         ) 
-#     # print(results)
-#     chunks=[]
-#     for result in results:
-#         chunk_text = result.get("chunks")
-#         chunks.append(chunk_text)
-#     return chunks
-
 # print(qstn_vectorize("How to make a cookie","junaidh-text-bake"))
 
 
