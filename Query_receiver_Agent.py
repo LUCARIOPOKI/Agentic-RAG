@@ -53,7 +53,7 @@ def query_generator(user_query: str) -> str:
                 - Do NOT include explanations or any text other than the JSON object.
                 
         Response Format (strict):
-                {response_format}
+                {RESPONSE_FORMAT_EXAMPLE}
                    
         Important:
                 - Do not include any explanation or additional text.
